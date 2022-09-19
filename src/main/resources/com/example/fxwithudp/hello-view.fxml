@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="241.0" prefWidth="284.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fxwithudp.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <Label text="Введите IP адрес контроллера">
+        <font>
+          <Font size="15.0" />
+        </font>
+    </Label>
+    <TextArea fx:id="inputIP" prefHeight="13.0" prefWidth="244.0" text="192.168.0." />
+    <Button mnemonicParsing="false" onAction="#button0" text="Opendoor =0" />
+    <Button mnemonicParsing="false" onAction="#button1" text="Opendoor =1" />
+    <Label fx:id="label1" />
+</VBox>
