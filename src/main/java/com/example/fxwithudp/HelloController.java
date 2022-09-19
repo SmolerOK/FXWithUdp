@@ -42,7 +42,7 @@ public class HelloController {
             int packetLength = outputPacket.getLength();
 
             //Получаем сообщение
-            label1.setText(convertByteToHex(receiveBuffer, packetLength));
+            label1.setText("Message: " + convertByteToHex(receiveBuffer, packetLength));
 
         } catch (IOException e) {
             label1.setText(e.getMessage());
