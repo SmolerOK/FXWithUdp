@@ -14,7 +14,7 @@
           <Font size="15.0" />
         </font>
     </Label>
-    <TextArea fx:id="inputIP" prefHeight="13.0" prefWidth="244.0" text="192.168.0." />
+    <TextArea fx:id="inputIP" prefHeight="13.0" prefWidth="244.0" text="192.168.0.35" />
     <Button mnemonicParsing="false" onAction="#button0" text="Opendoor =0" />
     <Button mnemonicParsing="false" onAction="#button1" text="Opendoor =1" />
     <Label fx:id="label1" />

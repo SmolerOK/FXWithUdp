@@ -1,0 +1,21 @@
+[INFO ] 2022-09-20 14:00:24.284 [main] HelloApplication - Открытие приложения.
+[INFO ] 2022-09-20 14:00:28.791 [JavaFX Application Thread] HelloController - Нажата кнопка opendoor =0.
+[INFO ] 2022-09-20 14:00:28.791 [JavaFX Application Thread] HelloController - Создание сокета.
+[INFO ] 2022-09-20 14:00:28.795 [JavaFX Application Thread] HelloController - Чтение ip: /192.168.0.35:8192
+[INFO ] 2022-09-20 14:00:28.796 [JavaFX Application Thread] HelloController - Отправка данных: [2, 31, 0, 3, 97, 56]. От: DESKTOP-SKV925G/192.168.8.102
+[INFO ] 2022-09-20 14:00:28.801 [JavaFX Application Thread] HelloController - Конвертация BYTE в HEX.
+[INFO ] 2022-09-20 14:00:28.804 [JavaFX Application Thread] HelloController - Проверка на объем пришедшего пакета. Получено: 7 byte. Ответ: 039F0000008D8E. От /192.168.0.35:8192
+[INFO ] 2022-09-20 14:00:28.805 [JavaFX Application Thread] HelloController - Конвертация BYTE в HEX.
+[INFO ] 2022-09-20 14:00:28.805 [JavaFX Application Thread] HelloController - Закрытие сокета.
+[INFO ] 2022-09-20 14:00:30.142 [JavaFX Application Thread] HelloController - Нажата кнопка opendoor =0.
+[INFO ] 2022-09-20 14:00:30.142 [JavaFX Application Thread] HelloController - Создание сокета.
+[ERROR] 2022-09-20 14:00:30.143 [JavaFX Application Thread] HelloController - Ошибка: java.net.UnknownHostException: Этот хост неизвестен (192.168.0.3531)
+[INFO ] 2022-09-20 14:00:33.510 [JavaFX Application Thread] HelloController - Нажата кнопка opendoor =0.
+[INFO ] 2022-09-20 14:00:33.510 [JavaFX Application Thread] HelloController - Создание сокета.
+[ERROR] 2022-09-20 14:00:37.323 [JavaFX Application Thread] HelloController - Ошибка: java.net.UnknownHostException: Этот хост неизвестен (192.168.0.)
+[INFO ] 2022-09-20 14:00:42.921 [JavaFX Application Thread] HelloController - Нажата кнопка opendoor =0.
+[INFO ] 2022-09-20 14:00:42.921 [JavaFX Application Thread] HelloController - Создание сокета.
+[INFO ] 2022-09-20 14:00:42.926 [JavaFX Application Thread] HelloController - Чтение ip: localhost/127.0.0.1:8192
+[INFO ] 2022-09-20 14:00:42.927 [JavaFX Application Thread] HelloController - Отправка данных: [2, 31, 0, 3, 97, 56]. От: DESKTOP-SKV925G/192.168.8.102
+[ERROR] 2022-09-20 14:00:43.927 [JavaFX Application Thread] HelloController - Ошибка: java.net.SocketTimeoutException: Receive timed out
+[INFO ] 2022-09-20 14:00:45.396 [JavaFX Application Thread] HelloApplication - Закрытие приложения.
