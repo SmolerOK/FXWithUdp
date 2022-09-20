@@ -11,7 +11,9 @@ import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HexFormat;
 
 public class HelloController {
 
@@ -23,11 +25,14 @@ public class HelloController {
 
     @FXML
     public void button0() {
+
         LOGGER.info("Нажата кнопка opendoor =0.");
+
         // Создаем UDP сокет
         LOGGER.info("Создание сокета.");
         try (MulticastSocket socket = new MulticastSocket()) {
             InetAddress ipAddress = InetAddress.getByName(inputIP.getText());
+
             LOGGER.info("Чтение ip: " + ipAddress + ":" + SERVICE_PORT);
             InetSocketAddress mainAddress = new InetSocketAddress(ipAddress, SERVICE_PORT);
             socket.setSoTimeout(1000);
@@ -46,10 +51,12 @@ public class HelloController {
             socket.receive(outputPacket);
             int packetLength = outputPacket.getLength();
 
+            String hex = HexFormat.of().formatHex(receiveBuffer, 0 , packetLength);
+
             LOGGER.info("Проверка на объем пришедшего пакета. Получено: " +
                     packetLength +
                     " byte. Ответ: " +
-                    convertByteToHex(receiveBuffer, packetLength) +
+                    hex +
                     "." +
                     " От " +
                     outputPacket.getAddress() +
@@ -60,8 +67,9 @@ public class HelloController {
                 throw new RuntimeException("Полученные данные превышают размер буфера. Размер " + packetLength + " byte.");
 
             //Получаем сообщение
-            label1.setText("Message: " + convertByteToHex(receiveBuffer, packetLength));
+            label1.setText("Message: " + hex);
             LOGGER.info("Закрытие сокета.");
+            //label1.setText("Message: " + convertByteToHex(receiveBuffer, packetLength));
 
         } catch (IOException e) {
             LOGGER.error("Ошибка: " + e);
@@ -70,18 +78,18 @@ public class HelloController {
     }
 
     // Перевод byte в hex
-    public static String convertByteToHex(byte[] arraysMessage, int packetL) {
-        StringBuilder hex = new StringBuilder();
-        try {
-            LOGGER.info("Конвертация BYTE в HEX.");
-            for (int i = 0; i < packetL; i++) {
-                hex.append(String.format("%02X", arraysMessage[i]));
-            }
-        } catch (Exception ex) {
-            LOGGER.error(ex);
-        }
-        return hex.toString();
-    }
+//    public static String convertByteToHex(byte[] arraysMessage, int packetL) {
+//        StringBuilder hex = new StringBuilder();
+//        try {
+//            LOGGER.info("Конвертация BYTE в HEX.");
+//            for (int i = 0; i < packetL; i++) {
+//                hex.append(String.format("%02X", arraysMessage[i]));
+//            }
+//        } catch (Exception ex) {
+//            LOGGER.error(ex);
+//        }
+//        return hex.toString();
+//    }
 
 
     public void button1() {

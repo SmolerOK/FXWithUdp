@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,6 +33,12 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         try {
             LOGGER.info("Открытие приложения.");
+            LOGGER.trace("TRACE Открытие приложения.");
+            LOGGER.debug("DEBUG Открытие приложения.");
+            LOGGER.warn("WARN Открытие приложения.");
+            LOGGER.error("ERROR Открытие приложения.");
+            LOGGER.fatal("FATAL Открытие приложения.");
+
             launch();
         } catch (Exception ex) {
             LOGGER.error(ex);
